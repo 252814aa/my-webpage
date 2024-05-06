@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>网页版音乐视频播放器</title>
+</head>
+<body>
+
+<!-- 视频播放器 -->
+<video id="myVideo" width="1080" height="720" controls>
+    <source src="https://mvwebfs.ali.kugou.com/202405061543/431f1ddc0b9713fa5221f238ad84b372/v2/d73267e82329f79e620029e172535593/G156/M08/01/00/fJQEAFydgRCAZkwYBCNBzCU0ZcQ574.mp4">
+    <source src="https://mvwebfs.ali.kugou.com/202405061642/9fcab71795ca2da19ccc6cd2425ba97b/KGTX/CLTX002/8b90a73a0782da730b701a8f92d6cace.mp4">
+    <source src="https://example.com/path/to/your/music-video.ogg" type="video/ogg">
+    您的浏览器不支持Video标签。
+</video>
+<button onclick="playPrevious()">上一曲</button> <button onclick="playNext()">下一曲</button>
+              <script> var video = document.getElementById("myVideo");   
+             var currentIndex = 0; var videoSources = video.getElementsByTagName("source");
+             function playPrevious() {      currentIndex--;  
+                     if (currentIndex < 0) { currentIndex = videoSources.length - 1;
+                        }  video.src = videoSources[currentIndex].src; video.play();
+                         }    function playNext() { currentIndex++;
+                         if (currentIndex >= videoSources.length) { currentIndex = 0;     
+                          } video.src = videoSources[currentIndex].src;      video.play(); 
+                             } 
+                              </script>
+
+</body>
+</html>
